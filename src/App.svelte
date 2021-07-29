@@ -1,16 +1,22 @@
 <script>
 	let name = 'Kwizera Caleb';
-	let classroom = 'senior one';
+	let beltColor = 'black';
 
 	const handleClick = () => {
-		classroom = 'senior two'
+		beltColor = 'orange'
+	}
+
+	const handleEventBind = (e) => {
+		beltColor = e.target.value;
 	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Learning in {classroom}.</p>
+	<p style="color: {beltColor};">Learning in {beltColor}.</p>
 	<button on:click={handleClick}>Change class</button>
+	<input type="text" on:input={handleEventBind} value={beltColor}>
+	<input type="text" bind:value={beltColor}> 
 </main>
 
 <style>
