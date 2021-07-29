@@ -1,7 +1,6 @@
 <script>
 	import Modal from './Modal.svelte'
 
-
 	let name = 'Kwizera Caleb';
 	let beltColor = 'black';
 
@@ -42,9 +41,16 @@
 	}
 
 	let num = 5;
+
+	let showModal = false;
+
+	const toggleModal = () => {
+		showModal = !showModal;
+	}
 </script>
 
-<Modal/>
+<Modal message="Hey there men these are props" {showModal} on:click={toggleModal}/>
+<button on:click={toggleModal}>Show modal</button>
 
 <main>
 	<h1>Hello {name}!</h1>
