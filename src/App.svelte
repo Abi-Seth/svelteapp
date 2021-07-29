@@ -1,10 +1,16 @@
 <script>
-	export let name;
+	let name = 'Kwizera Caleb';
+	let classroom = 'senior one';
+
+	const handleClick = () => {
+		classroom = 'senior two'
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>Learning in {classroom}.</p>
+	<button on:click={handleClick}>Change class</button>
 </main>
 
 <style>
