@@ -49,7 +49,16 @@
 	}
 </script>
 
-<Modal message="Hey there men these are props" {showModal} on:click={toggleModal}/>
+<Modal message="Add new person" {showModal} on:click={toggleModal}>
+	<form>
+		<input type="text" placeholder="Enter name">
+		<input type="text" placeholder="Enter belt color">
+		<button>Add person</button>
+	</form>
+	<div slot="title">
+		<h3>Registeration</h3>
+	</div>
+</Modal>
 <button on:click|once={toggleModal}>Show modal</button>
 
 <main>
