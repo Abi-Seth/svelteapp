@@ -25,6 +25,13 @@
 		console.log(firstname);
 		console.log(lastname);
 	}
+
+	//loops
+	let people = [
+		{name: 'Seth', beltColor: 'yellow', age: 12, id: 1},
+		{name: 'Yoshi', beltColor: 'black', age: 18, id: 2},
+		{name: 'Abi', beltColor: 'blue', age: 42, id: 3},
+	]
 </script>
 
 <main>
@@ -34,10 +41,19 @@
 	<input type="text" on:input={handleEventBind} value={beltColor}>
 	<input type="text" bind:value={beltColor}> 
 
-	<h1>Reactive svelte values</h1>
+	<h3>Reactive svelte values</h3>
 	<p>{fullnames} - {beltColor} belt</p>
 	<input type="text" bind:value={firstname}>
 	<input type="text" bind:value={lastname}>
+
+	{#each people as person (person.id)}
+		<div>
+			<h4>{person.name}</h4>
+			<p>{person.beltColor} belt - {person.age} years old.</p>
+		</div>
+	{:else}
+		<p>No person registered yet.</p>
+	{/each}
 </main>
 
 <style>
