@@ -1,4 +1,7 @@
 <script>
+	import Modal from './Modal.svelte'
+
+
 	let name = 'Kwizera Caleb';
 	let beltColor = 'black';
 
@@ -37,7 +40,11 @@
 		people = people.filter((person) => person.id != id);
 		console.log(event);
 	}
+
+	let num = 5;
 </script>
+
+<Modal/>
 
 <main>
 	<h1>Hello {name}!</h1>
@@ -54,12 +61,24 @@
 	{#each people as person (person.id)}
 		<div>
 			<h4>{person.name}</h4>
+			{#if person.beltColor === 'black'}
+				<p><strong>Master ninja</strong></p>
+			{/if}
 			<p>{person.beltColor} belt - {person.age} years old.</p>
 			<button on:click={(event) => deletePerson(event, person.id)}>delete</button>
 		</div>
 	{:else}
 		<p>No person registered yet.</p>
 	{/each}
+
+
+	{#if num > 20}
+		<p>Greater that 20</p>
+	{:else if num > 5}
+		<p>Greater thatn 5</p>
+	{:else} 
+		<p>Less than 5</p>
+	{/if}
 </main>
 
 <style>
