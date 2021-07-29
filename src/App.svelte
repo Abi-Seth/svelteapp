@@ -9,6 +9,22 @@
 	const handleEventBind = (e) => {
 		beltColor = e.target.value;
 	}
+
+	//reactive values 
+	let firstname = 'Abijuru';
+	let lastname = 'Seth';
+
+	$: firstname;
+	$: lastname;
+
+	$: fullnames = `${firstname} ${lastname}`;
+
+	$: console.warn(firstname);
+
+	$: {
+		console.log(firstname);
+		console.log(lastname);
+	}
 </script>
 
 <main>
@@ -17,6 +33,11 @@
 	<button on:click={handleClick}>Change class</button>
 	<input type="text" on:input={handleEventBind} value={beltColor}>
 	<input type="text" bind:value={beltColor}> 
+
+	<h1>Reactive svelte values</h1>
+	<p>{fullnames} - {beltColor} belt</p>
+	<input type="text" bind:value={firstname}>
+	<input type="text" bind:value={lastname}>
 </main>
 
 <style>
