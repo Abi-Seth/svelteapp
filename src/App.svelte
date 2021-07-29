@@ -50,7 +50,7 @@
 </script>
 
 <Modal message="Hey there men these are props" {showModal} on:click={toggleModal}/>
-<button on:click={toggleModal}>Show modal</button>
+<button on:click|once={toggleModal}>Show modal</button>
 
 <main>
 	<h1>Hello {name}!</h1>
