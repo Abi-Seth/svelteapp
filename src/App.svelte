@@ -1,5 +1,6 @@
 <script>
 	import Modal from './Modal.svelte'
+	import Form from './Form.svelte'
 
 	let name = 'Kwizera Caleb';
 	let beltColor = 'black';
@@ -50,11 +51,7 @@
 </script>
 
 <Modal message="Add new person" {showModal} on:click={toggleModal}>
-	<form>
-		<input type="text" placeholder="Enter name">
-		<input type="text" placeholder="Enter belt color">
-		<button>Add person</button>
-	</form>
+	<Form />
 	<div slot="title">
 		<h3>Registeration</h3>
 	</div>
