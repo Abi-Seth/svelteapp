@@ -32,6 +32,11 @@
 		{name: 'Yoshi', beltColor: 'black', age: 18, id: 2},
 		{name: 'Abi', beltColor: 'blue', age: 42, id: 3},
 	]
+
+	const deletePerson = (event, id) => {
+		people = people.filter((person) => person.id != id);
+		console.log(event);
+	}
 </script>
 
 <main>
@@ -50,6 +55,7 @@
 		<div>
 			<h4>{person.name}</h4>
 			<p>{person.beltColor} belt - {person.age} years old.</p>
+			<button on:click={(event) => deletePerson(event, person.id)}>delete</button>
 		</div>
 	{:else}
 		<p>No person registered yet.</p>
