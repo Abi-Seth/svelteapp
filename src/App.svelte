@@ -1,4 +1,7 @@
 <script>
+	import Modal from './Modal.svelte'
+
+
 	let name = 'Kwizera Caleb';
 	let beltColor = 'black';
 
@@ -40,6 +43,8 @@
 
 	let num = 5;
 </script>
+
+<Modal/>
 
 <main>
 	<h1>Hello {name}!</h1>
