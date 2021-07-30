@@ -26,7 +26,13 @@
     <input type="checkbox" bind:group={skills} value="fighting">Fighting <br>
     <input type="checkbox" bind:group={skills} value="running">Running <br>
     <input type="checkbox" bind:group={skills} value="sneaking">Sneaking <br>
-    
+    <h4>Select belt color</h4>
+    <select bind:value={beltColor}>
+        <option value="black">black</option>
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+        <option value="white">white</option>
+    </select>
     <button>Add person</button>
 </form>
 
