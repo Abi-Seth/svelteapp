@@ -1,12 +1,12 @@
 <script>
-	import Modal from './Modal.svelte'
-	import Form from './Form.svelte'
+	import Modal from './Modal.svelte';
+	import Form from './Form.svelte';
 
 	let name = 'Kwizera Caleb';
 	let beltColor = 'black';
 
 	const handleClick = () => {
-		beltColor = 'orange'
+		beltColor = 'orange';
 	}
 
 	const handleEventBind = (e) => {
@@ -91,6 +91,7 @@
 	{:else} 
 		<p>Less than 5</p>
 	{/if}
+
 </main>
 
 <style>
