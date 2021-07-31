@@ -1,4 +1,8 @@
 <script>
+    import { createEventDispatcher } from 'svelte'
+
+    let dispatch = createEventDispatcher();
+
     let name;
     let beltColor;
     let age;
@@ -10,6 +14,16 @@
     let skills = [];
 
     const handleForms = () => {
+        const person = {
+            name: name,
+            beltColor: beltColor,
+            age: age,
+            skills: skills,
+            id: Math.random()
+        }
+
+        dispatch('addPerson', person);
+
         console.warn(name, beltColor, age, fighting, running, sneaking, skills);
     }
 </script>
