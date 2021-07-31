@@ -48,10 +48,17 @@
 	const toggleModal = () => {
 		showModal = !showModal;
 	}
+
+	const addPerson = (e) => {
+		console.log(e.detail);
+		const person = e.detail;
+		//don't use push cause it is not updating the array but reloading it
+		people = [person, ...people];
+	}
 </script>
 
 <Modal message="Add new person" {showModal} on:click={toggleModal}>
-	<Form />
+	<Form on:addPerson={addPerson} />
 	<div slot="title">
 		<h3>Registeration</h3>
 	</div>
