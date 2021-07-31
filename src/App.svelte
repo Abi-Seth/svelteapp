@@ -54,6 +54,7 @@
 		const person = e.detail;
 		//don't use push cause it is not updating the array but reloading it
 		people = [person, ...people];
+		showModal = false;
 	}
 </script>
 
